@@ -14,9 +14,7 @@ function mergeSort(arr) {
     return arr
   }
   const middleIndex = Math.min(arr.length/2);
-  const left = arr.slice(0, middleIndex);
-  const right = arr.slice(middleIndex, arr.length);
-  return merge(mergeSort(left), mergeSort(right))
+  return merge(mergeSort(arr.slice(0, middleIndex)), mergeSort(arr.slice(middleIndex, arr.length)))
 }
 
 if (require.main === module) {
